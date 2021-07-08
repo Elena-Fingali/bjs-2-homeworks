@@ -5,14 +5,15 @@ function solveEquation(a, b, c) {
   let x;
   let x1;
   let x2;
-  
-  if(D < 0){
-    return arr [0] = 'корней нет';
+  arr.push(x,x1,x2);
+  if(D<0){
+    arr [0] = 'корней нет';
   } else if (D===0){
-    return arr [x=-b/(2*a)];
-  } else if (D>0){
-    return arr [(x1 = (-b + Math.sqrt(D))/2*a) && (x2 = (-b - Math.sqrt(D))/(2*a))]; 
-  }
+    arr [0] = -b/(2*a);
+  } else if (D>0) {
+    arr [1] = (-b + Math.sqrt(D))/(2*a);
+    arr [2] = (-b - Math.sqrt(D))/(2*a);
+  };
     return arr; // array
 };
 
