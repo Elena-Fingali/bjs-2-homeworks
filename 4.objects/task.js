@@ -1,11 +1,11 @@
-function Student(name, gender, age) {
+function Student(name, gender, age){
 // Ваш код
 this.name = name;
 this.gender = gender;
 this.age = age;
 }
 
-Student.prototype.setSubject = function(subjectName) {
+Student.prototype.setSubject = function(subjectName){
     //ваш код
   this.subject = subjectName;
   return this.setSubject[subjectName];
@@ -19,7 +19,6 @@ Student.prototype.addMark = function(mark){
   } else {
     this.marks.push(this.mark);
   }
-  return this.marks;
 }
 
 Student.prototype.addMarks = function(...grade){
@@ -33,25 +32,20 @@ Student.prototype.addMarks = function(...grade){
       this.marks.push(b);
     }
   }
-  return this.marks
-}
+ }
 
-Student.prototype.getAverage = function(addMarks) {
-  this.marks = this.addMarks();
-  let average;
+Student.prototype.getAverage = function(){
   let total = 0;
-  for(let item of marks){
+  for(let item of this.marks){
     total += item;
-    average = total/marks.length;
-  }
-  return this.getAverage;
+  }  
+  return total/this.marks.length; 
 }
 
-Student.prototype.excludeStudent = function(reason){
+Student.prototype.exclude = function(reason){
   this.excluded = reason;
   delete this.subject;
   delete this.marks;
-  return this.excludeStudent[reason];
 }
 
 
