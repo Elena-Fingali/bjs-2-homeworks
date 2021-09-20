@@ -1,8 +1,8 @@
 // Задание 1
 function getArrayParams(arr) {
   let avg;
-  let min = Infinity;
-  let max = -Infinity;
+  let min = arr[0];
+  let max = arr[0];
   let sum = 0;
   for (let i = 0; i<arr.length; i++){
     if(arr[i]>max){
@@ -18,34 +18,37 @@ function getArrayParams(arr) {
 }
 
 // Задание 2
-function worker(...arr) {
-for(let i=0; i < arr.length; i++){
-   sum+= arr[i]
+function worker(arr) {
+  let sum = 0;
+for (let i=0; i < arr.length; i++){
+   sum += arr[i]
   }
   return sum;
 };
   
 function makeWork(arrOfArr, func) {
-  let max
-
-  // Ваш кода
-  // for ...
-  
+  let max = Number.NEGATIVE_INFINITY;
+  for (let i=0; i<arrOfArr.length; i++){
+    let result = func(arrOfArr[i]);
+    if (result > max){
+      max = result;
+    }
+  }
   return max
-}
+};
 
 // Задание 3
 function worker2(arr) {
-  let min = Infinity;
-  let max = -Infinity;
-  for(let i=0; i<arr[0].length; i++){
-    if(arr[i]>max){
-      max=arr[i]
+  let min = arr[0];
+  let max = arr[0];
+  for(let i=0; i < arr.length; i++){
+    if(arr[i] > max){
+      max = arr[i]
     };
-    if(arr[i]<min){
+    if(arr[i] < min){
       min = arr[i]
-    };
-    max = max - min;
+    }
   }
-}
-makeWork(worker2);
+  return max - min;
+};
+makeWork(arrOfArr, worker2);
