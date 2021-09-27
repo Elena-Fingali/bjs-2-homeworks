@@ -9,8 +9,6 @@ class PrintEditionItem{
     }
     fix(){
         this.state *=1.5;
-        this.state = this._state;
-        return this._state;
     }
     set state(fix){
         if(fix<0){ 
